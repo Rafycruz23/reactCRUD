@@ -8,15 +8,24 @@ export default function Create() {
     const [lastName, setLastName] = useState('')
     const [checkbox, setcheckbox] = useState(false)
     
-    const submitData = ()=> {
+    const submitData = () => {
         axios.post('https://64dbc532593f57e435b1665a.mockapi.io/crudData',{
             firstName,
             lastName,
             checkbox,
-        })
-        console.log(firstName,lastName,checkbox)
+        }).then((result)=>{
+            console.log(result);
+            clearData()})
+        
     }
 
+
+    //THE CLEARDATA FUNCTION NEEDS WORK, DATA INPUT IS NOT REFRESHING
+    function clearData(){
+        setFirstName("");
+        setLastName("");
+        setcheckbox(false);
+    }
     // function verifyData(){
     //     if (firstName || lastName == ''){
     //         alert('Enter all field information')
