@@ -1,8 +1,11 @@
 import React from 'react'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 
-const Create = () => (
-  <Form>
+
+export default function Create() {
+
+return(
+  <Form className='form'>
     <Form.Field>
       <label>First Name</label>
       <input placeholder='First Name' />
@@ -16,6 +19,5 @@ const Create = () => (
     </Form.Field>
     <Button type='submit'>Submit</Button>
   </Form>
-)
+)}
 
-export default Create

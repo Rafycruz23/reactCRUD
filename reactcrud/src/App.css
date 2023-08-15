@@ -5,8 +5,20 @@
   align-items: center;
   height: 100vh;
   justify-content: center;
+  flex-direction: column;
+  background-color: rgb(0, 9, 39);
+  color: whitesmoke;
 }
 
 .header{
   font-family: 'Montserrat', sans-serif;
+  color: aliceblue;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.form label{
+  color: whitesmoke !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px !important;
 }

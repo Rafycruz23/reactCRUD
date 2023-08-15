@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="main">
       <div className='header'>
-        React Crud Application
+        <h2>React Crud Application</h2>
       </div>
       <Create/>
     </div>
