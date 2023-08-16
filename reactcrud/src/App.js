@@ -2,23 +2,45 @@ import './App.css';
 import Create from './components/Create';
 import Read from './components/Read';
 import Delete from './components/Delete';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {Routes, Route, useNavigate} from 'react-router-dom';
+
 
 function App() {
+
+  const navigate = useNavigate();
+
+  const navigateToCreate = () =>{
+    let path = '/create'
+    navigate(path)
+  }
+  const navigateToRead = () =>{
+    let path = '/read'
+    navigate(path)
+  }
+  const navigateToDelete = () =>{
+    let path = '/delete'
+    navigate(path)
+  }
+
   return (
       
     <div>
       <div className="main">
         <div className='header'>
-          <h2>React Crud Application</h2>
+          <h2>React CRUD Application</h2>
+          <div className='buttons'>  
+            <button className='ui button' onClick={navigateToCreate}>Create Entry</button>
+            <button className='ui button' onClick={navigateToRead}>Read Entry</button>
+            <button className='ui button' onClick={navigateToDelete}>Delete Entry</button>
+          </div>
         </div>
-          <Router>
+         
             <Routes> 
               <Route path='/create' element={<Create/>}/>
               <Route path='/read' element={<Read/>}/>
               <Route path='/delete' element={<Delete/>}/>
             </Routes>  
-          </Router> 
+          
       </div>    
     </div>    
   );

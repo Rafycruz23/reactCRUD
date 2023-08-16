@@ -48,7 +48,7 @@ return(
       <input placeholder='Last Name' onChange={(e)=>setLastName(e.target.value)}/>
     </Form.Field>
     <Form.Field>
-      <Checkbox label='I agree to the Terms and Conditions' onChange={(e)=>setcheckbox(!checkbox)}/>
+      <Checkbox className="ui  toggle checkbox" readonly="" tabindex="0" label='I agree to the Terms and Conditions' onChange={(e)=>setcheckbox(!checkbox)}/>
     </Form.Field>
     <Button type='submit' onClick={submitData}>Submit</Button>
   </Form>
