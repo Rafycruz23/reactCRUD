@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
-import axios from 'axios'
+import axios from 'axios';
+import '../App.css';
 
 
 export default function Create() {
@@ -36,6 +37,7 @@ export default function Create() {
 
 
 return(
+   
   <Form className='form'>
     <Form.Field>
       <label>First Name</label>
