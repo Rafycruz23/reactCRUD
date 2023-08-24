@@ -1,6 +1,7 @@
 import React from "react";
-import { Table } from 'semantic-ui-react';
+import { Button, Table } from 'semantic-ui-react';
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import '../App.css'
 
@@ -29,6 +30,11 @@ return(
         <Table.Cell>{data.firstName}</Table.Cell>
         <Table.Cell>{data.lastName}</Table.Cell>
         <Table.Cell>{data.checkbox ? 'Checked' : 'Unchecked'}</Table.Cell>
+        <Link to='/update'>
+        <Table.Cell>
+          <Button onClick={()=> setData(data)}>Update</Button>
+        </Table.Cell>
+        </Link>
       </Table.Row>
             )
         })}
