@@ -16,17 +16,23 @@ export default function Create() {
             checkbox,
         }).then((result)=>{
             console.log(result);
-            clearData()})
+            })
         
     }
 
+    // const refreshAPIData = ()=> {
+    //   axios.get('https://64dbc532593f57e435b1665a.mockapi.io/crudData').then((refreshAPIData)=>{
+    //     submitData(refreshAPIData.data)
+    //   })
+    // }
+
 
     //THE CLEARDATA FUNCTION NEEDS WORK, DATA INPUT IS NOT REFRESHING
-    function clearData(){
-        setFirstName("");
-        setLastName("");
-        setcheckbox(false);
-    }
+    // function clearData(){
+    //     setFirstName("");
+    //     setLastName("");
+    //     setcheckbox(false);
+    // }
     // function verifyData(){
     //     if (firstName || lastName == ''){
     //         alert('Enter all field information')

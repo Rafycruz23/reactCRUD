@@ -12,6 +12,27 @@ export default function Read(){
         axios.get('https://64dbc532593f57e435b1665a.mockapi.io/crudData').then((response) =>{setData(response.data); console.log(response.data)})
     }, [])
 
+    const setLSData = (data) =>{ //this sends data to local storage to be recovered in the UPDATE comp
+      let {id, firstName, lastName, checkbox} = data;
+      localStorage.setItem('ID', id);
+      localStorage.setItem("First Name", firstName);
+      localStorage.setItem("Last Name", lastName);
+      localStorage.setItem("Checkbox", checkbox);
+      console.log(data)
+    }
+
+    const deleteData = (id) => {
+      axios.delete(`https://64dbc532593f57e435b1665a.mockapi.io/crudData/${id}`).then(()=> {
+        refreshAPIData();
+      })
+    }
+
+    const refreshAPIData = ()=> {
+      axios.get('https://64dbc532593f57e435b1665a.mockapi.io/crudData').then((refreshAPIData)=>{
+        setData(refreshAPIData.data)
+      })
+    }
+
 return(
     <div>
  <Table celled>
@@ -32,9 +53,14 @@ return(
         <Table.Cell>{data.checkbox ? 'Checked' : 'Unchecked'}</Table.Cell>
         <Link to='/update'>
         <Table.Cell>
-          <Button onClick={()=> setData(data)}>Update</Button>
+          <Button onClick={()=> setLSData(data)}>Update</Button>
         </Table.Cell>
         </Link>
+      
+        <Table.Cell>
+          <Button onClick={()=> deleteData(data.id)}>Delete</Button>
+        </Table.Cell>
+        
       </Table.Row>
             )
         })}
